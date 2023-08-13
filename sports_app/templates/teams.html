@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <!-- Display Teams in Cards with Hover Effect and Clickable to Show Players -->
+    {% for team in teams %}
+    <div class="col-md-3 mb-4">
+        <a href="{% url 'team_players' team.id %}" style="text-decoration: none; color: inherit;">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ team.name }}</h5>
+                    <p class="card-text">{{ team.description }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

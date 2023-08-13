@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <!-- Display Teams in Cards -->
+    {% for team in teams %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ team.name }}</h5>
+                <p class="card-text">{{ team.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Display Players in Cards -->
+    {% for player in players %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ player.name }}</h5>
+                <p class="card-text">{{ player.position }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Display Events in Cards -->
+    {% for event in events %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <p class="card-text">{{ event.description }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <h2>{{ team.name }} Players</h2>
+  <div class="card-deck">
+    {% for player in players %}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ player.name }}</h5>
+          <p class="card-text">Age: {{ player.age }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

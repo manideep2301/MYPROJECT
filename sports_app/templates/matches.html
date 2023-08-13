@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <!-- Display Matches in Cards with Hover Effect -->
+    {% for match in matches %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100" style="transition: transform .2s;">
+            <div class="card-body">
+                <h5 class="card-title">{{ match.team1.name }} vs {{ match.team2.name }}</h5>
+                <p class="card-text">Date: {{ match.date }}</p>
+                <p class="card-text">Winner: 
+                    {% if match.winner %}
+                        {{ match.winner.name }}
+                    {% else %}
+                        TBD
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

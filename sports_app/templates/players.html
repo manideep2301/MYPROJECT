@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <!-- Display Players in Cards with Hover Effect -->
+    {% for player in players %}
+    <div class="col-md-3 mb-4">
+        <div class="card h-100" style="transition: transform .2s;">
+            <div class="card-body">
+                <h5 class="card-title">{{ player.name }}</h5>
+                <p class="card-text">{{ player.position }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
